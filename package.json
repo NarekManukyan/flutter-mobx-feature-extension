@@ -98,5 +98,6 @@
     "color": "#C8EDD3",
     "theme": "light"
   },
-  "type": "commonjs"
+  "type": "commonjs",
+  "icon": "icon.png"
 }
