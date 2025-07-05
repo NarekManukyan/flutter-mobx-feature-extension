@@ -6,23 +6,26 @@ A VS Code extension that helps you create Flutter features with MobX store, stat
 
 - **Right-click context menu** - Create features directly from the file explorer
 - **Automatic folder structure** - Creates the complete feature directory structure
-- **MobX integration** - Generates MobX stores and state management
+- **MobX integration** - Generates MobX stores and state management with `@factoryParam` support
 - **Provider pattern** - Uses Provider for dependency injection
 - **Barrel files** - Creates export files for clean imports
-- **Lazy singleton support** - Works with your existing lazy singleton pattern
+- **Injectable integration** - Works with your existing dependency injection pattern
 - **Melos integration** - Optimized for monorepo workflows
+- **Error handling** - File validation and overwrite protection
 
 ## Quick Start
 
 ### Option 1: Development Installation (Recommended for testing)
 
 1. **Clone this repository:**
+
    ```bash
    git clone <your-repo-url>
    cd flutter-mobx-feature-scaffold
    ```
 
 2. **Run setup script:**
+
    ```bash
    npm run setup
    ```
@@ -38,6 +41,7 @@ A VS Code extension that helps you create Flutter features with MobX store, stat
 ### Option 2: Production Installation
 
 1. **Package the extension:**
+
    ```bash
    npm install -g vsce
    npm run package
@@ -76,24 +80,28 @@ feature_name/
 ## Generated Files
 
 ### Store (`mobx/feature_name_store.dart`)
+
 - MobX store with `@injectable` annotation
-- Lazy singleton pattern with `@factoryParam`
-- Basic loading state management
+- Uses `extends` pattern for better `@factoryParam` support
+- Basic loading state management with `@readonly`
 - Disposable pattern
 
 ### State (`view/feature_name_state.dart`)
+
 - State management layer
-- Initializes the store with meeting ID
+- Initializes the store with factory parameters
 - Exposes store properties as computed values
 - Proper disposal handling
 
 ### Page (`view/feature_name_page.dart`)
+
 - Flutter widget with Provider pattern
 - Observer for reactive UI updates
 - Loading state handling
 - Clean separation of concerns
 
 ### Barrel File (`feature_name.dart`)
+
 - Exports all feature components
 - Clean import statements
 - Easy to use in other parts of the app
@@ -104,8 +112,9 @@ This extension is specifically designed to work with the [Flutter MobX Boilerpla
 
 - **Monorepo Support**: Works seamlessly with Melos-managed projects
 - **Package Structure**: Aligns with the `packages/api` and `packages/design_system` structure
-- **Dependency Injection**: Uses the same injectable pattern as the boilerplate
+- **Dependency Injection**: Uses the same injectable pattern with `@factoryParam` support
 - **Code Generation**: Integrates with the boilerplate's build system
+- **MobX Patterns**: Uses the same `extends` pattern as your boilerplate
 
 ## Troubleshooting
 
@@ -114,11 +123,13 @@ This extension is specifically designed to work with the [Flutter MobX Boilerpla
 If you don't see "Create MobX Feature" in the context menu:
 
 1. **Check if extension is loaded:**
+
    - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
    - Type "Developer: Show Running Extensions"
    - Look for "Flutter MobX Feature Scaffold"
 
 2. **Reload VS Code:**
+
    - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
    - Type "Developer: Reload Window"
 
@@ -129,6 +140,7 @@ If you don't see "Create MobX Feature" in the context menu:
 ### Development Mode
 
 When testing in development mode:
+
 - The extension runs in a separate VS Code window
 - Make sure you're right-clicking in the **Extension Development Host** window
 - Check the Debug Console for any error messages
@@ -138,6 +150,7 @@ When testing in development mode:
 - VS Code 1.74.0 or higher
 - Flutter project with MobX and injectable dependencies
 - Compatible with [Flutter MobX Boilerplate](https://github.com/NarekManukyan/flutter_boilerplate)
+- Melos for monorepo management (recommended)
 
 ## Dependencies
 
@@ -159,6 +172,7 @@ dev_dependencies:
 ## Next Steps After Creating a Feature
 
 1. **Run code generation:**
+
    ```bash
    melos run generate
    ```
@@ -168,11 +182,16 @@ dev_dependencies:
 3. **Implement your feature logic** in the generated files
 
 4. **Use the feature:**
+
    ```dart
    import 'package:app/features/feature_name/feature_name.dart';
-   
-   FeatureNamePage(meetingId: 'meeting-id')
+
+   FeatureNamePage(id: 'feature-id')
    ```
+
+## Beta Release
+
+This is currently a **beta release (v0.0.1)**. Please report any issues or suggestions on the [GitHub repository](https://github.com/NarekManukyan/flutter-mobx-feature-extension).
 
 ## Development
 
@@ -208,4 +227,4 @@ flutter-mobx-feature-scaffold/
 
 ## License
 
-MIT License 
+MIT License
