@@ -2,7 +2,7 @@
   "name": "flutter-mobx-feature-scaffold",
   "displayName": "Flutter MobX Feature Scaffold",
   "description": "Create Flutter features with MobX store, state, and view following the MobX boilerplate architecture pattern",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -44,7 +44,15 @@
     "@types/node": "16.x",
     "typescript": "^4.9.4"
   },
-  "keywords": ["flutter", "mobx", "feature", "architecture", "code-generation", "boilerplate", "scaffold"],
+  "keywords": [
+    "flutter",
+    "mobx",
+    "feature",
+    "architecture",
+    "code-generation",
+    "boilerplate",
+    "scaffold"
+  ],
   "author": "Narek Manukyan",
   "license": "MIT",
   "repository": {
