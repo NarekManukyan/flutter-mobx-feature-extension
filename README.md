@@ -18,6 +18,13 @@ A VS Code extension that helps you create Flutter features with MobX store, stat
 
 ### Installation
 
+#### Option 1: VS Code Marketplace (Recommended)
+1. **Open VS Code**
+2. **Go to Extensions** (`Ctrl+Shift+X` or `Cmd+Shift+X`)
+3. **Search for "Flutter MobX Feature Scaffold"**
+4. **Click Install**
+
+#### Option 2: Manual Installation
 1. **Download the VSIX file** from the [GitHub releases](https://github.com/NarekManukyan/flutter-mobx-feature-extension/releases)
 2. **Open VS Code**
 3. **Go to Extensions** (`Ctrl+Shift+X` or `Cmd+Shift+X`)

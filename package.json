@@ -7,6 +7,8 @@
     "vscode": "^1.74.0"
   },
   "categories": [
+    "Programming Languages",
+    "Snippets",
     "Other"
   ],
   "activationEvents": [
@@ -73,13 +75,28 @@
     "architecture",
     "code-generation",
     "boilerplate",
-    "scaffold"
+    "scaffold",
+    "dart",
+    "api",
+    "provider",
+    "retrofit",
+    "freezed",
+    "injectable"
   ],
+  "publisher": "narekmanukyan",
   "author": "Narek Manukyan",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/NarekManukyan/flutter-mobx-feature-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NarekManukyan/flutter-mobx-feature-extension/issues"
+  },
+  "homepage": "https://github.com/NarekManukyan/flutter-mobx-feature-extension#readme",
+  "galleryBanner": {
+    "color": "#C8EDD3",
+    "theme": "light"
   },
   "type": "commonjs"
 }
