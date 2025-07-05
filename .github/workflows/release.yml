@@ -22,10 +22,18 @@ jobs:
       - name: Package VSIX
         run: npm run package
 
+      - name: Extract changelog for this version
+        id: changelog
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          awk "/## \[$VERSION\]/,/^## /" CHANGELOG.md | head -n -1 > body.md || echo "No changelog entry found for $VERSION" > body.md
+
       - name: Upload VSIX to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             *.vsix
+          body_path: body.md
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
