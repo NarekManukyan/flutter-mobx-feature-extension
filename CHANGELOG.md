@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.6] - 2024-07-05
+### Fixed
+- Fixed context menu visibility by using proper VS Code context conditions
+- Changed from `resourceFolder && resourceScheme == file` to `explorerResourceIsFolder`
+- Updated activation events to include `workspaceContains:**/pubspec.yaml`
+- Used custom group name `mobxFeatureGroup@1` for better organization
+- Based on successful patterns from KiritchoukC.flutter-clean-architecture extension
+
 ## [0.0.5] - 2024-07-05
 ### Improved
 - Updated README to be user-focused, removing developer-specific information

@@ -2,7 +2,7 @@
   "name": "flutter-mobx-feature-scaffold",
   "displayName": "Flutter MobX Feature Scaffold",
   "description": "Create Flutter features with MobX store, state, and view following the MobX boilerplate architecture pattern",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -10,8 +10,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartupFinished",
-    "onCommand:flutter-mobx-feature.createFeature"
+    "onCommand:flutter-mobx-feature.createFeature",
+    "workspaceContains:**/pubspec.yaml"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -26,8 +26,8 @@
       "explorer/context": [
         {
           "command": "flutter-mobx-feature.createFeature",
-          "group": "navigation@1",
-          "when": "resourceFolder && resourceScheme == file"
+          "group": "mobxFeatureGroup@1",
+          "when": "explorerResourceIsFolder"
         }
       ],
       "commandPalette": [
