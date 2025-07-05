@@ -10,7 +10,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "onStartupFinished",
+    "onCommand:flutter-mobx-feature.createFeature"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -26,7 +27,13 @@
         {
           "command": "flutter-mobx-feature.createFeature",
           "group": "navigation@1",
-          "when": "resourceFolder"
+          "when": "resourceFolder && resourceScheme == file"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "flutter-mobx-feature.createFeature",
+          "when": "true"
         }
       ]
     }
