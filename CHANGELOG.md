@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.8] - 2024-07-05
+
+### Added
+- New "Create API Provider" command for generating complete API provider structures
+- Support for Retrofit-based API providers with proper code generation
+- Generated constants with status and type enums
+- DTO models with Freezed and JSON serialization
+- Update DTOs for API operations
+- Proper export files for clean imports
+- Context menu and command palette integration for API provider creation
+
 ## [0.0.7] - 2024-07-05
 ### Fixed
 - Fixed variable naming in generated state files to use proper camelCase

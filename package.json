@@ -2,7 +2,7 @@
   "name": "flutter-mobx-feature-scaffold",
   "displayName": "Flutter MobX Feature Scaffold",
   "description": "Create Flutter features with MobX store, state, and view following the MobX boilerplate architecture pattern",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -20,6 +20,11 @@
         "command": "flutter-mobx-feature.createFeature",
         "title": "Create MobX Feature",
         "category": "Flutter MobX"
+      },
+      {
+        "command": "flutter-mobx-feature.createApiProvider",
+        "title": "Create API Provider",
+        "category": "Flutter MobX"
       }
     ],
     "menus": {
@@ -28,11 +33,20 @@
           "command": "flutter-mobx-feature.createFeature",
           "group": "mobxFeatureGroup@1",
           "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "flutter-mobx-feature.createApiProvider",
+          "group": "mobxFeatureGroup@2",
+          "when": "explorerResourceIsFolder"
         }
       ],
       "commandPalette": [
         {
           "command": "flutter-mobx-feature.createFeature",
+          "when": "true"
+        },
+        {
+          "command": "flutter-mobx-feature.createApiProvider",
           "when": "true"
         }
       ]
