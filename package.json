@@ -1,0 +1,55 @@
+{
+  "name": "flutter-mobx-feature-scaffold",
+  "displayName": "Flutter MobX Feature Scaffold",
+  "description": "Create Flutter features with MobX store, state, and view following the MobX boilerplate architecture pattern",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "flutter-mobx-feature.createFeature",
+        "title": "Create MobX Feature",
+        "category": "Flutter MobX"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "flutter-mobx-feature.createFeature",
+          "group": "navigation@1",
+          "when": "resourceFolder"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "setup": "./scripts/setup.sh",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "keywords": ["flutter", "mobx", "feature", "architecture", "code-generation", "boilerplate", "scaffold"],
+  "author": "Narek Manukyan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NarekManukyan/flutter-mobx-feature-extension.git"
+  },
+  "type": "commonjs"
+}
