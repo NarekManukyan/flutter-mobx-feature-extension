@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.7] - 2024-07-05
+### Fixed
+- Fixed variable naming in generated state files to use proper camelCase
+- Changed from snake_case (`_user_settingsStore`) to camelCase (`_userSettingsStore`)
+- This ensures generated code follows Dart naming conventions
+- Affects the store variable names in state files
+
 ## [0.0.6] - 2024-07-05
 ### Fixed
 - Fixed context menu visibility by using proper VS Code context conditions

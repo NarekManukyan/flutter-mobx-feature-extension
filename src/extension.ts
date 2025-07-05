@@ -180,6 +180,9 @@ abstract class _${featureName}StoreBase with Store {
 }
 
 function generateStateContent(featureName: string, featureNameSnake: string): string {
+    // Convert snake_case to camelCase for variable names
+    const featureNameCamel = featureNameSnake.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+    
     return `import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
@@ -194,15 +197,15 @@ class ${featureName}State extends _${featureName}StateBase
 }
 
 abstract class _${featureName}StateBase with Store {
-  late final ${featureName}Store _${featureNameSnake}Store;
+  late final ${featureName}Store _${featureNameCamel}Store;
 
   _${featureName}StateBase();
 
   @computed
-  bool get isLoading => _${featureNameSnake}Store.isLoading;  
+  bool get isLoading => _${featureNameCamel}Store.isLoading;  
 
   void dispose() {
-    _${featureNameSnake}Store.dispose();
+    _${featureNameCamel}Store.dispose();
   }
 }`;
 }
