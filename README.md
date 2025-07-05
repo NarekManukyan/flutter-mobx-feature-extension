@@ -2,7 +2,7 @@
 
 A VS Code extension that helps you create Flutter features with MobX store, state, and view following the [Flutter MobX Boilerplate](https://github.com/NarekManukyan/flutter_boilerplate) architecture pattern.
 
-## Features
+## ✨ Features
 
 - **Right-click context menu** - Create features directly from the file explorer
 - **Automatic folder structure** - Creates the complete feature directory structure
@@ -13,53 +13,24 @@ A VS Code extension that helps you create Flutter features with MobX store, stat
 - **Melos integration** - Optimized for monorepo workflows
 - **Error handling** - File validation and overwrite protection
 
-## Quick Start
+## 🚀 Quick Start
 
-### Option 1: Development Installation (Recommended for testing)
+### Installation
 
-1. **Clone this repository:**
+1. **Download the VSIX file** from the [GitHub releases](https://github.com/NarekManukyan/flutter-mobx-feature-extension/releases)
+2. **Open VS Code**
+3. **Go to Extensions** (`Ctrl+Shift+X` or `Cmd+Shift+X`)
+4. **Click the "..." menu** and select "Install from VSIX..."
+5. **Choose the downloaded `.vsix` file**
 
-   ```bash
-   git clone <your-repo-url>
-   cd flutter-mobx-feature-scaffold
-   ```
-
-2. **Run setup script:**
-
-   ```bash
-   npm run setup
-   ```
-
-3. **Open in VS Code and press F5** to launch the extension in debug mode
-
-4. **Test the extension:**
-   - Open your Flutter project
-   - Right-click on a folder in the file explorer
-   - Select "Create MobX Feature"
-   - Enter a feature name (PascalCase)
-
-### Option 2: Production Installation
-
-1. **Package the extension:**
-
-   ```bash
-   npm install -g vsce
-   npm run package
-   ```
-
-2. **Install the .vsix file:**
-   - In VS Code, go to Extensions (Ctrl+Shift+X)
-   - Click the "..." menu and select "Install from VSIX..."
-   - Choose the generated `.vsix` file
-
-## Usage
+### Usage
 
 1. **Right-click** on a folder in the VS Code file explorer
 2. Select **"Create MobX Feature"** from the context menu
 3. Enter the feature name in **PascalCase** (e.g., `UserProfile`)
 4. The extension will create the complete feature structure
 
-## Generated Structure
+## 🏗️ Generated Structure
 
 ```
 feature_name/
@@ -77,36 +48,32 @@ feature_name/
 └── feature_name.dart (barrel file)
 ```
 
-## Generated Files
+## 📄 Generated Files
 
 ### Store (`mobx/feature_name_store.dart`)
-
 - MobX store with `@injectable` annotation
 - Uses `extends` pattern for better `@factoryParam` support
 - Basic loading state management with `@readonly`
 - Disposable pattern
 
 ### State (`view/feature_name_state.dart`)
-
 - State management layer
 - Initializes the store with factory parameters
 - Exposes store properties as computed values
 - Proper disposal handling
 
 ### Page (`view/feature_name_page.dart`)
-
 - Flutter widget with Provider pattern
 - Observer for reactive UI updates
 - Loading state handling
 - Clean separation of concerns
 
 ### Barrel File (`feature_name.dart`)
-
 - Exports all feature components
 - Clean import statements
 - Easy to use in other parts of the app
 
-## Integration with Flutter MobX Boilerplate
+## 🎯 Integration with Flutter MobX Boilerplate
 
 This extension is specifically designed to work with the [Flutter MobX Boilerplate](https://github.com/NarekManukyan/flutter_boilerplate) project structure:
 
@@ -116,43 +83,32 @@ This extension is specifically designed to work with the [Flutter MobX Boilerpla
 - **Code Generation**: Integrates with the boilerplate's build system
 - **MobX Patterns**: Uses the same `extends` pattern as your boilerplate
 
-## Troubleshooting
+## 🔄 Next Steps After Creating a Feature
 
-### Context Menu Not Showing
+1. **Run code generation:**
+   ```bash
+   melos run generate
+   ```
 
-If you don't see "Create MobX Feature" in the context menu:
+2. **Register dependencies** in `injectable.dart`
 
-1. **Check if extension is loaded:**
+3. **Implement your feature logic** in the generated files
 
-   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
-   - Type "Developer: Show Running Extensions"
-   - Look for "Flutter MobX Feature Scaffold"
+4. **Use the feature:**
+   ```dart
+   import 'package:app/features/feature_name/feature_name.dart';
+   
+   FeatureNamePage(id: 'feature-id')
+   ```
 
-2. **Reload VS Code:**
-
-   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
-   - Type "Developer: Reload Window"
-
-3. **Check extension logs:**
-   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
-   - Type "Developer: Show Extension Logs"
-
-### Development Mode
-
-When testing in development mode:
-
-- The extension runs in a separate VS Code window
-- Make sure you're right-clicking in the **Extension Development Host** window
-- Check the Debug Console for any error messages
-
-## Requirements
+## ⚙️ Requirements
 
 - VS Code 1.74.0 or higher
 - Flutter project with MobX and injectable dependencies
 - Compatible with [Flutter MobX Boilerplate](https://github.com/NarekManukyan/flutter_boilerplate)
 - Melos for monorepo management (recommended)
 
-## Dependencies
+## 📦 Dependencies
 
 Your Flutter project should have these dependencies (as in the boilerplate):
 
@@ -169,62 +125,36 @@ dev_dependencies:
   injectable_generator: ^2.0.0
 ```
 
-## Next Steps After Creating a Feature
+## 🆘 Troubleshooting
 
-1. **Run code generation:**
+### Context Menu Not Showing
 
-   ```bash
-   melos run generate
-   ```
+If you don't see "Create MobX Feature" in the context menu:
 
-2. **Register dependencies** in `injectable.dart`
+1. **Check if extension is loaded:**
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+   - Type "Developer: Show Running Extensions"
+   - Look for "Flutter MobX Feature Scaffold"
 
-3. **Implement your feature logic** in the generated files
+2. **Reload VS Code:**
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+   - Type "Developer: Reload Window"
 
-4. **Use the feature:**
+3. **Try Command Palette:**
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+   - Type "Create MobX Feature"
+   - Run the command directly
 
-   ```dart
-   import 'package:app/features/feature_name/feature_name.dart';
+### Extension Not Working
 
-   FeatureNamePage(id: 'feature-id')
-   ```
+- Make sure you're right-clicking on a **folder** (not a file)
+- Ensure you have a Flutter project open
+- Check that the extension is properly installed
 
-## Beta Release
+## 🆕 Beta Release
 
-This is currently a **beta release (v0.0.1)**. Please report any issues or suggestions on the [GitHub repository](https://github.com/NarekManukyan/flutter-mobx-feature-extension).
+This is currently a **beta release (v0.0.4)**. Please report any issues or suggestions on the [GitHub repository](https://github.com/NarekManukyan/flutter-mobx-feature-extension).
 
-## Development
-
-### Available Scripts
-
-- `npm run setup` - Install dependencies and compile
-- `npm run compile` - Compile TypeScript
-- `npm run watch` - Watch for changes and recompile
-- `npm run package` - Create .vsix package
-- `npm run publish` - Publish to VS Code Marketplace
-
-### Project Structure
-
-```
-flutter-mobx-feature-scaffold/
-├── src/
-│   └── extension.ts          # Main extension logic
-├── out/                      # Compiled JavaScript
-├── scripts/
-│   └── setup.sh             # Setup script
-├── package.json             # Extension manifest
-├── tsconfig.json            # TypeScript config
-└── README.md               # This file
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test the extension
-5. Submit a pull request
-
-## License
+## 📄 License
 
 MIT License

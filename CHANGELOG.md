@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.5] - 2024-07-05
+### Improved
+- Updated README to be user-focused, removing developer-specific information
+- Improved extension activation and context menu visibility
+- Added command palette entry for easier testing
+- Enhanced troubleshooting section with user-friendly instructions
+
 ## [0.0.4] - 2024-07-05
 ### Fixed
 - Fixed GitHub Actions permissions to allow creating releases
